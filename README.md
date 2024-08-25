@@ -1,2 +1,1 @@
-Practice Array & Object's Prototype Method in MDN Documentation Everyday.
-
+Practice Symbol, Array and Object's Prototype Method in MDN Documentation Everyday.
