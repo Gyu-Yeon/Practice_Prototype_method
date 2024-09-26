@@ -32,3 +32,21 @@ john.name = "John";
 
 // 메서드 호출
 john.greeting(); // 출력: 안녕하세요, 제 이름은 John입니다.
+
+//3 Object.defineProperties()
+// 객체에 새로운 속성을 정의하거나 기존의 속성을 수정하고, 그 객체를 반환.
+
+const obj3 = {};
+const props = {
+  property1: {
+    value: 42,
+    writable: true,
+  },
+  property2: {},
+};
+
+function testDefineProperties(obj, properties) {
+  return Object.defineProperties(obj, properties);
+}
+testDefineProperties(obj3, props);
+console.log(obj3.property1);
