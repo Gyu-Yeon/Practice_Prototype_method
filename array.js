@@ -34,3 +34,6 @@ function testCopyWithin(target, start, end) {
 }
 
 console.log("copyWithin example 1", testCopyWithin(9, 6));
+
+// 4. Array.prototype.copyWithin()
+//
