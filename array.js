@@ -33,7 +33,19 @@ function testCopyWithin(target, start, end) {
   return arr.copyWithin(target, start, end);
 }
 
-console.log("copyWithin example 1", testCopyWithin(9, 6));
+console.log("copyWithin example 1", testCopyWithin(5, 6)); //[1, 2, 3, 4, 5, 6, 7, 8, 9, 7];
 
-// 4. Array.prototype.copyWithin()
-//
+// 4. Array.prototype.entries();
+// 배열의 각 요소에 대해 [인덱스, 요소값] 형태의 쌍을 포함하는 새로운 Array Iterator 객체를 반환하는 메서드입니다. 이 메서드는 배열의 인덱스와 해당 요소의 값을 동시에 순회해야 할 때 유용합니다.
+// 원본 배열을 변경하지 않습니다.
+
+const fruits = ['Apple', 'Banana', 'Orange'];
+const iterator = fruits.entries();
+
+for (let entry of iterator) {
+  console.log(entry); // [0, "Apple"] [1, "Banana"] [2, "Orange"];
+}
+
+for (let [index, value] of fruits.entries()) {
+  console.log(`Index: ${index}, Value: ${value}`); // Index: 0, Value: Apple Index: 1, Value: Banana Index: 2, Value: Orange;
+}
