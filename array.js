@@ -49,3 +49,15 @@ for (let entry of iterator) {
 for (let [index, value] of fruits.entries()) {
   console.log(`Index: ${index}, Value: ${value}`); // Index: 0, Value: Apple Index: 1, Value: Banana Index: 2, Value: Orange;
 }
+
+// 5. Array.from;
+// Array.from() 메서드는 유사 배열 객체(array-like object)나 반복 가능한 객체(iterable object)를 얕게 복사해 새로운 Array 객체를 만듭니다.
+
+const str = 'hello';
+const strArr = Array.from(str);
+console.log(strArr); // ['h', 'e', 'l', 'l', 'o']
+
+//map 함수 사용 가능.
+
+const range = Array.from({length: 5}, (v, i) => i * 2);
+console.log(range); // [0, 2, 4, 6, 8]
