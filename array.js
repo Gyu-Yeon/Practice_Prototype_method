@@ -14,7 +14,7 @@ console.log("at example 1", testAt(-3)); //5
 // 2. Array.prototype.concat();
 // 두개 이상의 array를 병합하는데 사용되는 함수. *기존 array들을 변경하지 않고 새 array를 리턴한다.
 // 인자에 n개의 array를 넣을 수 있다. ex) arr.concat(arr1, arr2, arr3, ....);
-// 인자에 아무것도 넣지 않을 경우 concat은 호출된 기존 array의 shallow copy를 리턴한다.
+// 인자에 아무것도 넣지 않을 경우 concat은 호출된 기존 array의 shallow copy를 한 array를 리턴한다.
 
 function testConcat(arr1, arr2) {
   return arr1.concat(arr2);
@@ -50,7 +50,7 @@ for (let [index, value] of fruits.entries()) {
   console.log(`Index: ${index}, Value: ${value}`); // Index: 0, Value: Apple Index: 1, Value: Banana Index: 2, Value: Orange;
 }
 
-// 5. Array.from;
+// 5. Array.from();
 // Array.from() 메서드는 유사 배열 객체(array-like object)나 반복 가능한 객체(iterable object)를 얕게 복사해 새로운 Array 객체를 만듭니다.
 
 const str = 'hello';
@@ -59,5 +59,39 @@ console.log(strArr); // ['h', 'e', 'l', 'l', 'o']
 
 //map 함수 사용 가능.
 
-const range = Array.from({length: 5}, (v, i) => i * 2);
+const range = Array.from({length: 5}, (v, i) => {
+  console.log("v", v);
+  return i * 2
+});
 console.log(range); // [0, 2, 4, 6, 8]
+
+
+// 6. Array.isArray();
+// Array.isArray는 주어진 값이 배열인지 아닌지를 확인하는 메서드입니다. true 또는 false를 반환합니다.
+
+// 일반 배열
+console.log(Array.isArray([1, 2, 3]));          // true
+console.log(Array.isArray([]));                 // true
+
+// 배열이 아닌 것들
+console.log(Array.isArray('array'));            // false
+console.log(Array.isArray(123));                // false
+console.log(Array.isArray("[]"));               // false
+console.log(Array.isArray({ length: 5 }));      // false
+console.log(Array.isArray(null));               // false
+console.log(Array.isArray(undefined));          // false
+
+// 7 Array.of();
+// 전달받은 인자들로 새로운 Array 인스턴스를 생성합니다.
+
+const arrOf = Array.of(8);
+console.log(arrOf)  // [8];
+
+// new Array()와 Array.of 차이점은 new Array는 인자의 숫자가 array의 length가 되는 반면, 
+// Array.of의 인자는 array의 요소가 된다는 차이가 있다.
+
+const arrNew = new Array(3);
+const arrOf2 = Array.of(3);
+
+console.log(arrNew); // [empty × 3];
+console.log(arrOf2); // [3];
