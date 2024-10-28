@@ -81,7 +81,7 @@ console.log(Array.isArray({ length: 5 }));      // false
 console.log(Array.isArray(null));               // false
 console.log(Array.isArray(undefined));          // false
 
-// 7 Array.of();
+// 7 Array.of()
 // 전달받은 인자들로 새로운 Array 인스턴스를 생성합니다.
 
 const arrOf = Array.of(8);
@@ -95,3 +95,21 @@ const arrOf2 = Array.of(3);
 
 console.log(arrNew); // [empty × 3];
 console.log(arrOf2); // [3];
+
+
+// Array.prototype.every()
+// every() 메서드는 배열의 모든 요소가 주어진 테스트 함수를 통과하는지 검사합니다. 모든 요소가 조건을 만족하면 true를, 하나라도 만족하지 않으면 false를 반환합니다.
+// 빈 배열에 대해 every()를 호출하면 무조건 true를 반환합니다.
+
+const numbers = [1, 2, 3, 4, 5];
+const allPositive = numbers.every(num => num > 0);
+console.log(allPositive); // true
+
+const people = [
+  { name: "Kim", age: 25 },
+  { name: "Lee", age: 19 },
+  { name: "Park", age: 35 }
+];
+
+const allAdults = people.every(person => person.age >= 18);
+console.log(allAdults); // true
