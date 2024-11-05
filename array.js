@@ -113,3 +113,18 @@ const people = [
 
 const allAdults = people.every(person => person.age >= 18);
 console.log(allAdults); // true
+
+// Array.fill(value, start, end) 
+// Array.fill()은 배열의 시작 인덱스부터 끝 인덱스까지 정적인 값 하나로 채우는 메서드입니다.
+
+const arrFill = [1, 2, 3, 4, 5];
+arr.fill(0);
+console.log(arrFill); // [0, 0, 0, 0, 0]
+
+const arrFill2 = [1, 2, 3, 4, 5];
+arr.fill(0, 2);  // 인덱스 2부터 끝까지 0으로 채움
+console.log(arrFill2); // [1, 2, 0, 0, 0]
+
+const arrFill3 = [1, 2, 3, 4, 5];
+arr.fill(0, 1, 4);  // 인덱스 1부터 3까지 0으로 채움(끝 인덱스는 제외)
+console.log(arrFill3); // [1, 0, 0, 0, 5]
