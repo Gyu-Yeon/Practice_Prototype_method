@@ -134,17 +134,32 @@ console.log(arrFill3); // [1, 0, 0, 0, 5]
 // 조건을 만족하는 요소가 없으면 빈 배열을 반환합니다.
 // 콜백 함수는 true/false를 반환해야 합니다.
 
-const filterNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const NumbersFilter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const evenNumbers = filterNumbers.filter((num) => num % 2 === 0);
 console.log(evenNumbers); // [2, 4, 6, 8, 10]
 
-const filterPeople = [
+const peopleFilter = [
   { name: "김철수", age: 17 },
   { name: "이영희", age: 25 },
   { name: "박민수", age: 30 },
   { name: "정지훈", age: 15 },
 ];
 
-const adults = filterPeople.filter((person) => person.age >= 20);
-console.log(adults);
-// [{ name: "이영희", age: 25 }, { name: "박민수", age: 30 }]
+const adultsFilter = peopleFilter.filter((person) => person.age >= 20);
+console.log(adults); // [{ name: "이영희", age: 25 }, { name: "박민수", age: 30 }]
+
+// Array.find()
+// find() 메서드는 배열에서 주어진 조건을 만족하는 첫 번째 요소를 반환합니다.
+// 만약 조건을 만족하는 요소가 없다면 undefined를 반환합니다.
+
+const numbersFind = [1, 3, 4, 7, 8];
+const firstEven = numbersFind.find((num) => num % 2 === 0);
+console.log(firstEven); // 4
+
+const usersFind = [
+  { id: 1, name: "김철수" },
+  { id: 2, name: "이영희" },
+  { id: 3, name: "박민수" },
+];
+const userFind = usersFind.find((user) => user.id === 2);
+console.log(userFind); // { id: 2, name: '이영희' }
