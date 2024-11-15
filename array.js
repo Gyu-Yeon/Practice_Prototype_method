@@ -134,7 +134,7 @@ console.log(arrFill3); // [1, 0, 0, 0, 5]
 // 조건을 만족하는 요소가 없으면 빈 배열을 반환합니다.
 // 콜백 함수는 true/false를 반환해야 합니다.
 
-const NumbersFilter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const filterNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const evenNumbers = filterNumbers.filter((num) => num % 2 === 0);
 console.log(evenNumbers); // [2, 4, 6, 8, 10]
 
@@ -146,20 +146,48 @@ const peopleFilter = [
 ];
 
 const adultsFilter = peopleFilter.filter((person) => person.age >= 20);
-console.log(adults); // [{ name: "이영희", age: 25 }, { name: "박민수", age: 30 }]
+console.log(adultsFilter); // [{ name: "이영희", age: 25 }, { name: "박민수", age: 30 }]
 
 // Array.find()
 // find() 메서드는 배열에서 주어진 조건을 만족하는 첫 번째 요소를 반환합니다.
 // 만약 조건을 만족하는 요소가 없다면 undefined를 반환합니다.
 
-const numbersFind = [1, 3, 4, 7, 8];
-const firstEven = numbersFind.find((num) => num % 2 === 0);
+const findNumbers = [1, 3, 4, 7, 8];
+const firstEven = findNumbers.find((num) => num % 2 === 0);
 console.log(firstEven); // 4
 
-const usersFind = [
+const findUsers = [
   { id: 1, name: "김철수" },
   { id: 2, name: "이영희" },
   { id: 3, name: "박민수" },
 ];
-const userFind = usersFind.find((user) => user.id === 2);
+const userFind = findUsers.find((user) => user.id === 2);
 console.log(userFind); // { id: 2, name: '이영희' }
+
+// Array.findIndex()
+// findIndex()는 배열에서 주어진 조건을 만족하는 첫 번째 요소의 인덱스를 반환합니다. 만약 조건을 만족하는 요소가 없다면 -1을 반환합니다.
+// 콜백 함수를 인자로 받습니다
+// 배열의 각 요소에 대해 콜백 함수가 실행됩니다
+// 조건을 만족하는 첫 번째 요소의 인덱스만 반환합니다
+// 조건을 만족하는 요소가 없으면 -1을 반환합니다
+// 원본 배열을 변경하지 않습니다
+
+const findIndexNumbers = [5, 12, 8, 130, 44];
+
+const index = findIndexNumbers.findIndex(num => num > 13);
+console.log(index); // 3 (130이 13보다 큰 첫 번째 요소이며, 그 인덱스는 3)
+
+const smallIndex = findIndexNumbers.findIndex(num => num < 0);
+console.log(smallIndex); // -1 (0보다 작은 수가 없으므로 -1 반환)
+
+const findIndexuUsers = [
+  { id: 1, name: 'John', age: 28 },
+  { id: 2, name: 'Jane', age: 32 },
+  { id: 3, name: 'Bob', age: 24 }
+];
+
+// 나이가 30 이상이고 이름이 'J'로 시작하는 첫 번째 사용자의 인덱스
+const findIndexUser = findIndexuUsers.findIndex(user => 
+  user.age >= 30 && user.name.startsWith('J')
+);
+console.log(findIndexUser); // 1 (Jane의 인덱스)
