@@ -191,3 +191,19 @@ const findIndexUser = findIndexuUsers.findIndex(user =>
   user.age >= 30 && user.name.startsWith('J')
 );
 console.log(findIndexUser); // 1 (Jane의 인덱스)
+
+// Array.findLast();
+// 배열의 마지막 요소부터 시작하여 주어진 테스트 함수를 만족하는 첫 번째 요소를 반환합니다.
+
+const findLastIndexNumbers = [1, 3, 5, 6, 7, 8, 9];
+const lastEven = numbers.findLast(num => num % 2 === 0);
+console.log(lastEven); // 8
+
+// Array.prototype.findLastIndex()
+// Array 인스턴스의 findLastIndex() 메서드는 배열을 역순으로 순회하며 주어진 판별 함수를 만족하는 배열의 첫번째 요소의 인덱스를 반환합니다. 만족하는 요소가 없으면 -1을 반환합니다.
+
+const findLastInedxNumbers = [2, 5, 3, 7, 5, 6, 8, 5, 9];
+
+// 5인 마지막 요소의 인덱스 찾기
+const lastFiveIndex = findLastInedxNumbers.findLastIndex(num => num === 5);
+console.log(lastFiveIndex); // 7 출력
